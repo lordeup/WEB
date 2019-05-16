@@ -46,35 +46,5 @@ function removeExtraBlanks($text)
         }
     }
 
-
-
     return $resultText;
-}
-
-function passwordStrength($password)
-{
-    $passwordLen = mb_strlen($password);
-    $passwordStrength = 0;
-    $countNumber = 0;
-    $countLower = 0;
-    $countUpper = 0;
-    $arr = str_split($password);
-
-    for ($i = 0; $i < $passwordLen; ++$i) {
-        if (is_numeric($arr[$i])) {
-            ++$countNumber;
-        }
-
-        if (ctype_lower($arr[$i]) && ctype_alpha($arr[$i])) {
-            ++$countLower;
-        }
-
-        if (ctype_upper($arr[$i]) && ctype_alpha($arr[$i])) {
-            ++$countUpper;
-        }
-    }
-
-    $passwordStrength = $passwordStrength + 4 * $passwordLen;
-
-    return $passwordStrength;
 }
